@@ -1,0 +1,1319 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>微信小程序开发教程_小程序开发文档_微信小程序demo源码下载_易用通小程序教程网</title>
+<meta name="description" content="易用通提供微信小程序开发教程，微信小程序开发文档，微信小程序Demo模板，小程序资讯，小程序DEMO下载、微信小程序商店等资源。是国内领先的微信小程序教程资源门户网站" />
+<meta name="keywords" content="微信小程序,微信小程序开发,微信小程序教程,微信小程序入门,微信小程序开发文档" />
+<meta http-equiv="Cache-Control" content="no-transform " />
+<link rel="shortcut icon" href="/favicon.ico">
+<link rel="stylesheet" href="/skin/css/common.css" type="text/css" />
+<link rel="stylesheet" href="/skin/css/index.css" type="text/css" />
+<meta name="baidu-site-verification" content="YvgQBvNjlk" />
+<script type="text/javascript" language="javascript" src="/skin/js/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" language="javascript" src="/skin/js/jquery.superslide.js"></script>
+</head>
+
+<body>
+<!--顶部开始-->
+
+
+
+<script type="text/javascript">
+
+
+
+function AddFavorite(title, url) { 
+
+
+
+try {window.external.addFavorite(url, title);} 
+
+
+
+catch (e) { 
+
+
+
+try {window.sidebar.addPanel(title, url, "");} 
+
+
+
+catch (e) {alert("抱歉，您所使用的浏览器不支持此操作。加入收藏失败，请使用Ctrl+D进行添加");} 
+
+
+
+} 
+
+
+
+}
+
+
+
+</script>
+
+
+
+
+
+
+
+<div  class="site-nav">
+
+
+
+  <div class="site-nav-bd w">
+
+
+
+    <ul  class="site-nav-bd-l" >
+
+
+
+      <li class="menu login-info">
+
+
+
+        <div class="menu-hd"> 欢迎光临，了解微信小程序开发，就上易用通！ </div>
+
+
+
+      <li id="J_Weekend" class="menu weekend" ></li>
+
+
+
+    </ul>
+
+
+
+    <ul id="J_SiteNavBdR" class="site-nav-bd-r">
+
+
+
+      <li class="menu favorite" >
+
+
+
+        <div class="menu-hd"><span>我们不以盈利为目的，只专注微信小程序开发！</span></div>
+
+
+
+      </li>
+
+
+
+      <li class="menu favorite">
+
+
+
+        <div class="menu-hd"><a href="javascript:void(0);" onClick="AddFavorite('易用通',location.href)"><span class="iconfont"></span><span>收藏本站</span></a></div>
+
+
+
+      </li>
+
+
+
+      <!--<li class="J_Menu menu" >
+
+
+
+        <div class="menu-hd"><a href="">帮助中心</a><i><em></em><span></span></i></div>
+
+
+
+        <div class="menu-bd menu-list" >
+
+
+
+          <div class="menu-bd-panel">
+
+
+
+
+
+
+
+            <p align="center"> <a href="">售后保障</a></p>
+
+
+
+          
+
+
+
+          </div>
+
+
+
+        </div>
+
+
+
+      </li>-->
+
+
+
+    </ul>
+
+
+
+  </div>
+
+
+
+</div>
+
+
+
+<div class="page-header">
+
+
+
+  <div class="w">
+
+
+
+    <div class="logo Left"><a href="/" title="易用通"><img src="/skin/images/logo.jpg"  alt="微信小程序开发logo" /></a></div>
+
+
+
+    <div class="topArea Left">
+
+
+
+      <div class="btMap">
+
+
+
+        <div class="search Left">
+
+
+
+          <form action="/plus/search.php" name="formsearch" method="post" >
+
+
+
+            <input type="hidden" name="kwtype" value="0" />
+
+
+
+            <div class="search-wrap">
+
+
+
+              <input type="hidden" name="typeid" value="2" id="typeid" />
+
+
+
+              <div class="search-option">教程文档 <i><em></em><span></span></i></div>
+
+
+
+              <dl class="select" style="display:none">
+
+
+
+                <dd >程序DEMO</dd>
+
+
+
+                <dd >教程文档</dd>
+
+
+
+                <dd >小程序应用</dd>
+
+
+
+              </dl>
+
+
+
+              <script type="text/javascript">
+
+
+
+				$(document).ready(function(){
+
+
+
+				  $(".search-option").toggle(function(){ 
+
+
+
+				  $(this).next(".select").slideDown();
+
+
+
+				  },function(){ 
+
+
+
+				  $(this).next(".select").slideUp();
+
+
+
+				  }); 
+
+
+
+				$(".select dd").click(function(){ 
+
+
+
+				  $a=$(this).html();
+
+
+
+				  if($a=='程序DEMO'){
+
+
+
+				  $("#typeid").val('1');
+
+
+
+				  $(".search-option").html($a+'<i><em></em><span></span></i>'); 
+
+
+
+				  }
+
+
+
+					else  if($a=='教程文档'){
+
+
+
+				  $("#typeid").val('2');
+
+
+
+				  $(".search-option").html($a+'<i><em></em><span></span></i>'); 
+
+
+
+				  }
+
+
+
+				   else  if($a=='小程序应用'){
+
+
+
+				  $("#typeid").val('11');
+
+
+
+				  $(".search-option").html($a+'<i><em></em><span></span></i>'); 
+
+
+
+				  }
+
+
+
+				 $(".select").slideUp();
+
+
+
+				}); 
+
+
+
+				  
+
+
+
+				});
+
+
+
+				</script>
+
+
+
+              <input class="keyWord" type="text"  name="q"  value="" placeholder="易用通：让微信小程序开发更简单！"   autocomplete="off"  />
+
+
+
+            </div>
+
+
+
+            <input type="submit" name="submit" class="submit sub-btn mod_search_btn" tabindex="9" value="搜 索" />
+
+
+
+          </form>
+
+
+
+        </div>
+
+
+
+      </div>
+
+
+
+    </div>
+
+
+
+    <div class="rnr Right"> <a class="tag" href="/tags/">标签聚合</a></div>
+
+
+
+  </div>
+
+
+
+</div>
+
+
+
+<div class="globa-nav">
+
+
+
+  <div class="w">
+
+
+
+    <div class="allMenu Left"> <a href="/" class='home'>网站首页</a>  <a href="http://www.yiyongtong.com/weixin/list-2.html">微信小程序开发</a> 
+
+
+
+       <a href="http://www.yiyongtong.com/weixin/list-8.html">微信小程序运营</a> 
+
+
+
+       <a href="http://www.yiyongtong.com/weixin/list-1.html">微信小程序DEMO</a> 
+
+
+
+      
+       <a href="https://www.eyoucms.com/wxapp">在线小程序制作</a>
+      
+      
+      <span class="icon_hot"></span> </div>
+
+
+
+    <ul class="sideMenu2 Right">
+
+
+
+      <li onMouseOver="sw_nav('12',1);" onMouseOut="sw_nav('12',0);" class="shopzhou"> 
+
+
+
+        
+
+
+
+      </li>
+
+
+
+    </ul>
+
+
+
+    <script type="text/javascript">
+
+
+
+      //初始化主菜单
+
+
+
+		function sw_nav(obj,tag)
+
+
+
+		{
+
+
+
+		var DisSub = document.getElementById("DisSub_"+obj);
+
+
+
+		var a_div= document.getElementById("a_div"+obj);
+
+
+
+			if(tag==1)
+
+
+
+			{
+
+
+
+				DisSub.style.display = "block";
+
+
+
+				a_div.className="current";
+
+
+
+			}
+
+
+
+			else
+
+
+
+			{
+
+
+
+				DisSub.style.display = "none";
+
+
+
+				a_div.className="";
+
+
+
+			}
+
+
+
+		}
+
+
+
+</script> </div>
+
+
+
+</div>
+
+
+
+ 
+
+<!--顶部结束-->
+
+<div class="w">
+  <div class="all_cat">
+    <div class="box">
+      <ul>
+        <li><span class="ico_02"></span><a href="http://www.yiyongtong.com/weixin/list-3.html">小程序教程</a><b>提供实战入门教程</b></li>
+        <li><span class="ico_01"></span><a href="http://www.yiyongtong.com/weixin/list-4.html">小程序文档</a><b>官方文档第一时间解读</b></li>
+        <li><span class="ico_03"></span><a href="http://www.yiyongtong.com/weixin/list-1.html">小程序模板</a><b>上千Demo助你开发简单</b></li>
+        <li><span class="ico_04"></span><a href="http://www.yiyongtong.com/weixin/list-5.html">小程序业界</a><b>一站读懂最重要的资讯</b></li>
+        <li style="border-bottom:0"><span class="ico_05"></span><a href="http://www.yiyongtong.com/weixin/list-11.html">小程序应用</a><b>海量小程序应用任你飞</b></li>
+      </ul>
+    </div>
+  </div>
+</div>
+<div class="no_subject clearfix">
+<div class="focus-wrap">
+  <div class="slide_banner"> <i class="shade left"></i><i class="shade right"></i>
+    <ul class="slide_main" style="position: relative; width: 1920px; height: 425px;">
+      <li><a href="/" id="qyuef"><img src="/skin/images/fad1.jpg" border="0"></a></li>
+      
+      <!--<li><a href="/" id="qyuef"><img src="/skin/images/fad2.jpg" border="0"></a></li>-->
+      
+    </ul>
+    <ul class="slide_nav">
+      <li class="">1</li>
+      <li class="">2</li>
+      <li class="on">3</li>
+      <li class="">4</li>
+    </ul>
+  </div>
+  <script type="text/javascript">
+
+    jQuery(".slide_banner").slide( {titCell:".slide_nav",mainCell:".slide_main",delayTime:500,interTime:6000,effect:"fold",autoPlay:true,autoPage:true});
+
+    </script> 
+</div>
+<div class="w xinwen clearfix">
+<div class="mainAright wrap Right">
+<div class="side Left">
+<div class="akeypost">
+  <div class="tempWrap" style="overflow:hidden; position:relative; height:50px">
+    <ul id="marqueebox3" style="height: 600px; position: relative; padding: 0px; margin: 0px; top: -100px;">
+      
+      <li class="clone" style="height: 50px;">
+        <h3>共有 <strong><a href="http://www.yiyongtong.com/weixin/list-2.html">3616</a> </strong>微信小程序开发</h3>
+      </li>
+      
+      <li class="clone" style="height: 50px;">
+        <h3>共有 <strong><a href="http://www.yiyongtong.com/weixin/list-8.html">907</a> </strong>微信小程序运营</h3>
+      </li>
+      
+      <li class="clone" style="height: 50px;">
+        <h3>共有 <strong><a href="http://www.yiyongtong.com/weixin/list-1.html">1306</a> </strong>微信小程序DEMO</h3>
+      </li>
+      
+      <li class="clone" style="height: 50px;">
+        <h3>共有 <strong><a href="http://www.yiyongtong.com/weixin/list-33.html">0</a> </strong>在线小程序制作</h3>
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<script type="text/javascript">
+
+        $(".side .akeypost").slide({mainCell:"#marqueebox3",effect:"topLoop",easing:"easeInOutElastic",autoPlay:true,delayTime:1500,interTime:6000});
+
+		</script>
+<div class="tab">
+<div class="head"> 
+  
+  <a class='first on'>业界</a> 
+  
+  <a>测评</a> 
+  
+  <a>经验</a>  </div>
+<div class="body">
+
+            <ul class='tBody gg current'>
+  
+  
+  <li class="gray"><a href="http://www.yiyongtong.com/archives/view-6911-1.html" title="从程序员的角度分析微信小程序">从程序员的角度分析微信小程序</a></li>
+<li class="gray"><a href="http://www.yiyongtong.com/archives/view-6839-1.html" title="小程序风口丨微信小程序的三大引流模式和四大">小程序风口丨微信小程序的三大引流模式和四大</a></li>
+<li class="gray"><a href="http://www.yiyongtong.com/archives/view-6838-1.html" title="抖音总裁张楠控诉腾讯：搞垄断搞小动作，有失">抖音总裁张楠控诉腾讯：搞垄断搞小动作，有失</a></li>
+<li class="gray"><a href="http://www.yiyongtong.com/archives/view-6496-1.html" title="微信小游戏最新TOP10榜单，休闲益智小游戏霸占榜">微信小游戏最新TOP10榜单，休闲益智小游戏霸占榜</a></li>
+<li class="gray"><a href="http://www.yiyongtong.com/archives/view-6495-1.html" title="朱啸虎入局小程序，流量红利就在今年">朱啸虎入局小程序，流量红利就在今年</a></li>
+
+</ul>
+            <ul class='tBody gg'>
+    
+  
+  <li class="gray"><a href="http://www.yiyongtong.com/archives/view-4102-1.html" title="大家都在用的 4 个资讯阅读工具，哪款更适合你">大家都在用的 4 个资讯阅读工具，哪款更适合你</a></li>
+<li class="gray"><a href="http://www.yiyongtong.com/archives/view-3777-1.html" title="小程序专题：小程序原来在微信群里还可以这样">小程序专题：小程序原来在微信群里还可以这样</a></li>
+<li class="gray"><a href="http://www.yiyongtong.com/archives/view-3402-1.html" title="朋友，听说过“学渣奖学金”吗？">朋友，听说过“学渣奖学金”吗？</a></li>
+<li class="gray"><a href="http://www.yiyongtong.com/archives/view-3400-1.html" title="想占领你的火车时间，「旅途点点」获得2000万人">想占领你的火车时间，「旅途点点」获得2000万人</a></li>
+<li class="gray"><a href="http://www.yiyongtong.com/archives/view-3399-1.html" title="「乐摇摇」推出线上抓娃娃一站式解决方案，这">「乐摇摇」推出线上抓娃娃一站式解决方案，这</a></li>
+
+</ul>
+            <ul class='tBody gg'>
+    
+  
+  <li class="gray"><a href="http://www.yiyongtong.com/archives/view-7570-1.html" title="你可以零侵入式实现小程序的全局状态管理吗">你可以零侵入式实现小程序的全局状态管理吗</a></li>
+<li class="gray"><a href="http://www.yiyongtong.com/archives/view-7569-1.html" title="微信小程序canvas图片融合及画布隐藏问题记录">微信小程序canvas图片融合及画布隐藏问题记录</a></li>
+<li class="gray"><a href="http://www.yiyongtong.com/archives/view-7568-1.html" title="小程序webview分享">小程序webview分享</a></li>
+<li class="gray"><a href="http://www.yiyongtong.com/archives/view-7567-1.html" title="van-picker 在微信小程序中的用法 - 省市区多级联动">van-picker 在微信小程序中的用法 - 省市区多级联动</a></li>
+<li class="gray"><a href="http://www.yiyongtong.com/archives/view-7566-1.html" title="小程序数据埋点实践之曝光量">小程序数据埋点实践之曝光量</a></li>
+
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script type="text/javascript">
+
+jQuery(".tab").slide({ titCell:".head a", mainCell:".body",delayTime:0 });
+
+</script>
+</div>
+<div> </div>
+<script type="text/javascript">
+
+/* 内层图片滚动切换 */
+
+jQuery(".tabGroup .tBody").slide({ mainCell:"ul",vis:5,prevCell:".sPrev",autoPlay:true,nextCell:".sNext",effect:"leftLoop"});
+
+
+
+jQuery(".tabGroup").slide({ titCell:".head a", mainCell:".body",delayTime:0 });
+
+</script>
+<div class="clear"></div>
+<div class="w plist louti">
+  <div class="tit3"> <a href="http://www.yiyongtong.com/weixin/list-11.html" class="more">更多小程序</a> <a href="http://www.yiyongtong.com/weixin/list-11.html"><img src="/skin/images/1f.png"> 小程序应用</a> </div>
+  <div class="subplist">
+    <div class="waterfall">
+      <div class="cat">
+        <div class="goods clearfix">
+          <ul class="cate-list clearfix">
+            <li class="item"> <a class="avatar" href="http://www.yiyongtong.com/archives/view-4420-1.html" title="天天秀颜值"><img src="http://www.yiyongtong.com/uploads/allimg/180211/1-1P2111454200-L.png" width="70" height="70" alt="天天秀颜值小程序"></a> <a class="title" href="http://www.yiyongtong.com/archives/view-4420-1.html" title="天天秀颜值"> 天天秀颜值 </a>
+              <div class="tags"> <a href="/tags/颜值">颜值</a> <a href="/tags/美女">美女</a>  </div>
+            </li>
+<li class="item"> <a class="avatar" href="http://www.yiyongtong.com/archives/view-4419-1.html" title="高清图像"><img src="http://www.yiyongtong.com/uploads/allimg/180211/1-1P2111453290-L.png" width="70" height="70" alt="高清图像小程序"></a> <a class="title" href="http://www.yiyongtong.com/archives/view-4419-1.html" title="高清图像"> 高清图像 </a>
+              <div class="tags"> <a href="/tags/照片">照片</a> <a href="/tags/摄影">摄影</a>  </div>
+            </li>
+<li class="item"> <a class="avatar" href="http://www.yiyongtong.com/archives/view-4418-1.html" title="松鼠宝宝相册"><img src="http://www.yiyongtong.com/uploads/allimg/180211/1-1P2111450590-L.png" width="70" height="70" alt="松鼠宝宝相册小程序"></a> <a class="title" href="http://www.yiyongtong.com/archives/view-4418-1.html" title="松鼠宝宝相册"> 松鼠宝宝相册 </a>
+              <div class="tags"> <a href="/tags/相册">相册</a> <a href="/tags/故事">故事</a>  </div>
+            </li>
+<li class="item"> <a class="avatar" href="http://www.yiyongtong.com/archives/view-4417-1.html" title="Wanna美女时尚杂志"><img src="http://www.yiyongtong.com/uploads/allimg/180211/1-1P2111449490-L.jpg" width="70" height="70" alt="Wanna美女时尚杂志小程序"></a> <a class="title" href="http://www.yiyongtong.com/archives/view-4417-1.html" title="Wanna美女时尚杂志"> Wanna美女时尚杂志 </a>
+              <div class="tags"> <a href="/tags/美女">美女</a> <a href="/tags/摄影">摄影</a>  </div>
+            </li>
+<li class="item"> <a class="avatar" href="http://www.yiyongtong.com/archives/view-4416-1.html" title="分享相册"><img src="http://www.yiyongtong.com/uploads/allimg/180211/1-1P211144T00-L.png" width="70" height="70" alt="分享相册小程序"></a> <a class="title" href="http://www.yiyongtong.com/archives/view-4416-1.html" title="分享相册"> 分享相册 </a>
+              <div class="tags"> <a href="/tags/相册">相册</a> <a href="/tags/摄影">摄影</a> <a href="/tags/照片">照片</a>  </div>
+            </li>
+<li class="item"> <a class="avatar" href="http://www.yiyongtong.com/archives/view-4415-1.html" title="鲜柚壁纸"><img src="http://www.yiyongtong.com/uploads/allimg/180211/1-1P211144H30-L.jpg" width="70" height="70" alt="鲜柚壁纸小程序"></a> <a class="title" href="http://www.yiyongtong.com/archives/view-4415-1.html" title="鲜柚壁纸"> 鲜柚壁纸 </a>
+              <div class="tags"> <a href="/tags/壁纸">壁纸</a> <a href="/tags/图片">图片</a>  </div>
+            </li>
+<li class="item"> <a class="avatar" href="http://www.yiyongtong.com/archives/view-4414-1.html" title="么么哒相册"><img src="http://www.yiyongtong.com/uploads/allimg/180211/1-1P2111441450-L.png" width="70" height="70" alt="么么哒相册小程序"></a> <a class="title" href="http://www.yiyongtong.com/archives/view-4414-1.html" title="么么哒相册"> 么么哒相册 </a>
+              <div class="tags"> <a href="/tags/相册">相册</a> <a href="/tags/视频">视频</a> <a href="/tags/照片">照片</a>  </div>
+            </li>
+<li class="item"> <a class="avatar" href="http://www.yiyongtong.com/archives/view-4413-1.html" title="CutoWallpaper"><img src="http://www.yiyongtong.com/uploads/allimg/180211/1-1P2111440090-L.jpg" width="70" height="70" alt="CutoWallpaper小程序"></a> <a class="title" href="http://www.yiyongtong.com/archives/view-4413-1.html" title="CutoWallpaper"> CutoWallpaper </a>
+              <div class="tags"> <a href="/tags/壁纸">壁纸</a> <a href="/tags/图片">图片</a>  </div>
+            </li>
+<li class="item"> <a class="avatar" href="http://www.yiyongtong.com/archives/view-4412-1.html" title="Philm黑咔相机"><img src="http://www.yiyongtong.com/uploads/allimg/180211/1-1P211143J20-L.png" width="70" height="70" alt="Philm黑咔相机小程序"></a> <a class="title" href="http://www.yiyongtong.com/archives/view-4412-1.html" title="Philm黑咔相机"> Philm黑咔相机 </a>
+              <div class="tags"> <a href="/tags/照片">照片</a> <a href="/tags/拍照">拍照</a> <a href="/tags/朋友圈">朋友圈</a>  </div>
+            </li>
+<li class="item"> <a class="avatar" href="http://www.yiyongtong.com/archives/view-4411-1.html" title="最新壁纸"><img src="http://www.yiyongtong.com/uploads/allimg/180211/1-1P2111435370-L.png" width="70" height="70" alt="最新壁纸小程序"></a> <a class="title" href="http://www.yiyongtong.com/archives/view-4411-1.html" title="最新壁纸"> 最新壁纸 </a>
+              <div class="tags"> <a href="/tags/美女">美女</a> <a href="/tags/壁纸">壁纸</a>  </div>
+            </li>
+<li class="item"> <a class="avatar" href="http://www.yiyongtong.com/archives/view-4410-1.html" title="美女汽车"><img src="http://www.yiyongtong.com/uploads/allimg/180211/1-1P2111432470-L.png" width="70" height="70" alt="美女汽车小程序"></a> <a class="title" href="http://www.yiyongtong.com/archives/view-4410-1.html" title="美女汽车"> 美女汽车 </a>
+              <div class="tags"> <a href="/tags/美女">美女</a> <a href="/tags/汽车">汽车</a>  </div>
+            </li>
+<li class="item"> <a class="avatar" href="http://www.yiyongtong.com/archives/view-4409-1.html" title="初礼壁纸"><img src="http://www.yiyongtong.com/uploads/allimg/180211/1-1P2111430590-L.png" width="70" height="70" alt="初礼壁纸小程序"></a> <a class="title" href="http://www.yiyongtong.com/archives/view-4409-1.html" title="初礼壁纸"> 初礼壁纸 </a>
+              <div class="tags"> <a href="/tags/壁纸">壁纸</a> <a href="/tags/创意">创意</a>  </div>
+            </li>
+
+          </ul>
+        </div>
+        <div class="blank5"></div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="w plist louti">
+  <div class="tit3"> <a href="http://www.yiyongtong.com/weixin/list-1.html" class="more">更多DEMO</a> <a href="http://www.yiyongtong.com/weixin/list-1.html"><img src="/skin/images/2f.png"> 微信小程序DEMO</a> </div>
+  <div class="subplist">
+    <div class="waterfall">
+      <div class="cat">
+        <div class="goods clearfix"> <div class="list ">
+            <div class="img"> <a  href="http://www.yiyongtong.com/archives/view-5694-1.html"> <img class="lazy" src="http://www.yiyongtong.com/uploads/allimg/180413/2_04131035414J2.jpg" width="220" style="display: inline;"> </a>
+              <div class="Woqu_68" style="bottom: -70px;">应用描述 管理宠物的健康，记录日常饲养过程 记录宠物疫苗/洗澡/就... </div>
+            </div>
+            <div class="goodsName bghei">
+              <p class="goods_title"> <a  href="http://www.yiyongtong.com/archives/view-5694-1.html" title="微信小程序Demo：记录宠物日常喂养的微信" >微信小程序Demo：记录宠物日常喂养的微信</a> </p>
+              <p class="info"> <a href="http://www.yiyongtong.com/weixin/list-1.html" class="sec_name">微信小程序DEMO</a></p>
+            </div>
+          </div>
+<div class="list ">
+            <div class="img"> <a  href="http://www.yiyongtong.com/archives/view-5693-1.html"> <img class="lazy" src="http://www.yiyongtong.com/uploads/allimg/180413/2_0413103315JV.png" width="220" style="display: inline;"> </a>
+              <div class="Woqu_68" style="bottom: -70px;">... </div>
+            </div>
+            <div class="goodsName bghei">
+              <p class="goods_title"> <a  href="http://www.yiyongtong.com/archives/view-5693-1.html" title="微信小程序Demo：辣椒忍者（点餐商城）" >微信小程序Demo：辣椒忍者（点餐商城）</a> </p>
+              <p class="info"> <a href="http://www.yiyongtong.com/weixin/list-1.html" class="sec_name">微信小程序DEMO</a></p>
+            </div>
+          </div>
+<div class="list ">
+            <div class="img"> <a  href="http://www.yiyongtong.com/archives/view-5691-1.html"> <img class="lazy" src="http://www.yiyongtong.com/uploads/allimg/180413/2_04131025001M9.jpg" width="220" style="display: inline;"> </a>
+              <div class="Woqu_68" style="bottom: -70px;">... </div>
+            </div>
+            <div class="goodsName bghei">
+              <p class="goods_title"> <a  href="http://www.yiyongtong.com/archives/view-5691-1.html" title="微信小程序Demo：淘宝商城一类" >微信小程序Demo：淘宝商城一类</a> </p>
+              <p class="info"> <a href="http://www.yiyongtong.com/weixin/list-1.html" class="sec_name">微信小程序DEMO</a></p>
+            </div>
+          </div>
+<div class="list ">
+            <div class="img"> <a  href="http://www.yiyongtong.com/archives/view-5690-1.html"> <img class="lazy" src="http://www.yiyongtong.com/uploads/allimg/180413/2_041310233JI1.jpg" width="220" style="display: inline;"> </a>
+              <div class="Woqu_68" style="bottom: -70px;">... </div>
+            </div>
+            <div class="goodsName bghei">
+              <p class="goods_title"> <a  href="http://www.yiyongtong.com/archives/view-5690-1.html" title="微信小程序Demo：美食推荐" >微信小程序Demo：美食推荐</a> </p>
+              <p class="info"> <a href="http://www.yiyongtong.com/weixin/list-1.html" class="sec_name">微信小程序DEMO</a></p>
+            </div>
+          </div>
+<div class="list ">
+            <div class="img"> <a  href="http://www.yiyongtong.com/archives/view-5689-1.html"> <img class="lazy" src="http://www.yiyongtong.com/uploads/allimg/180413/2_04131022042P8.png" width="220" style="display: inline;"> </a>
+              <div class="Woqu_68" style="bottom: -70px;">点评：只设计了主页，但是设计方面还是值得学习的； 实例代码： ... </div>
+            </div>
+            <div class="goodsName bghei">
+              <p class="goods_title"> <a  href="http://www.yiyongtong.com/archives/view-5689-1.html" title="微信小程序学习用demo：一元夺宝：仅有主" >微信小程序学习用demo：一元夺宝：仅有主</a> </p>
+              <p class="info"> <a href="http://www.yiyongtong.com/weixin/list-1.html" class="sec_name">微信小程序DEMO</a></p>
+            </div>
+          </div>
+<div class="list ">
+            <div class="img"> <a  href="http://www.yiyongtong.com/archives/view-5688-1.html"> <img class="lazy" src="http://www.yiyongtong.com/uploads/allimg/180413/2_041310202D363.jpg" width="220" style="display: inline;"> </a>
+              <div class="Woqu_68" style="bottom: -70px;">... </div>
+            </div>
+            <div class="goodsName bghei">
+              <p class="goods_title"> <a  href="http://www.yiyongtong.com/archives/view-5688-1.html" title="微信小程序Demo：帮帮兼职" >微信小程序Demo：帮帮兼职</a> </p>
+              <p class="info"> <a href="http://www.yiyongtong.com/weixin/list-1.html" class="sec_name">微信小程序DEMO</a></p>
+            </div>
+          </div>
+<div class="list ">
+            <div class="img"> <a  href="http://www.yiyongtong.com/archives/view-5687-1.html"> <img class="lazy" src="http://www.yiyongtong.com/uploads/allimg/180413/2_0413100Q5W95.gif" width="220" style="display: inline;"> </a>
+              <div class="Woqu_68" style="bottom: -70px;">... </div>
+            </div>
+            <div class="goodsName bghei">
+              <p class="goods_title"> <a  href="http://www.yiyongtong.com/archives/view-5687-1.html" title="微信小程序Demo：辩论发言计时器" >微信小程序Demo：辩论发言计时器</a> </p>
+              <p class="info"> <a href="http://www.yiyongtong.com/weixin/list-1.html" class="sec_name">微信小程序DEMO</a></p>
+            </div>
+          </div>
+<div class="list ">
+            <div class="img"> <a  href="http://www.yiyongtong.com/archives/view-5686-1.html"> <img class="lazy" src="http://www.yiyongtong.com/uploads/allimg/180413/2_04131005593F4.jpg" width="220" style="display: inline;"> </a>
+              <div class="Woqu_68" style="bottom: -70px;">... </div>
+            </div>
+            <div class="goodsName bghei">
+              <p class="goods_title"> <a  href="http://www.yiyongtong.com/archives/view-5686-1.html" title="微信小程序Demo：汇率换算" >微信小程序Demo：汇率换算</a> </p>
+              <p class="info"> <a href="http://www.yiyongtong.com/weixin/list-1.html" class="sec_name">微信小程序DEMO</a></p>
+            </div>
+          </div>
+ </div>
+        <div class="blank5"></div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="clear"></div>
+<div class="clear"></div>
+<div class="w clearfix louti" style="margin-top:30px;">
+  <div id="Tab1" class="zhinan Left">
+    <h1 class="c-sectitle-2"><span>微信小程序开发</span>
+      <ul class="Right">
+        <li class="hover">教程</li>
+        <li>文档</li>
+        <li>BUG</li>
+      </ul>
+    </h1>
+    <div class="Contentbox clearfix">
+      <div class="zn_ad Left"> <img src="/skin/images/kd.gif" width='146' height='145' border='0' /> </div>
+      <div class="zn_cont Right"> <div id="con_one_1" >
+          <ul>
+            <li class="gray">• <a href="http://www.yiyongtong.com/archives/view-7630-1.html">小程序登录的最优流程</a></li>
+<li class="gray">• <a href="http://www.yiyongtong.com/archives/view-7629-1.html">微信小程序 动态加载swiper时不显示的问题（爬坑</a></li>
+<li class="gray">• <a href="http://www.yiyongtong.com/archives/view-7628-1.html">京东购物小程序cookie方案实践</a></li>
+<li class="gray">• <a href="http://www.yiyongtong.com/archives/view-7627-1.html">迷你PS小程序-集成的开放式画报、油墨电子签名</a></li>
+<li class="gray">• <a href="http://www.yiyongtong.com/archives/view-7626-1.html">小程序、H5登录授权、分享、支付流程</a></li>
+<li class="gray">• <a href="http://www.yiyongtong.com/archives/view-7625-1.html">微信小程序加入购物车动画的实现（向上、向下</a></li>
+<li class="gray">• <a href="http://www.yiyongtong.com/archives/view-7624-1.html">我是怎么在 3 天内开发 AI 微信小程序的</a></li>
+<li class="gray">• <a href="http://www.yiyongtong.com/archives/view-7623-1.html">微信小程序的自动化测试框架</a></li>
+<li class="gray">• <a href="http://www.yiyongtong.com/archives/view-7622-1.html">小程序如何写动态标签</a></li>
+<li class="gray">• <a href="http://www.yiyongtong.com/archives/view-7621-1.html">微信小程序|实现界面滑动切换</a></li>
+<li class="gray">• <a href="http://www.yiyongtong.com/archives/view-7620-1.html">小程序--滑动右侧字母索引</a></li>
+<li class="gray">• <a href="http://www.yiyongtong.com/archives/view-7619-1.html">微信小程序开发中 var that =this的用法</a></li>
+
+          </ul>
+        </div><div id="con_one_1" >
+          <ul>
+            <li class="gray">• <a href="http://www.yiyongtong.com/archives/view-2004-1.html">官方问答-- 微信小游戏 Q&amp;A</a></li>
+<li class="gray">• <a href="http://www.yiyongtong.com/archives/view-2001-1.html">微信官方小程序基础教程 - 上线</a></li>
+<li class="gray">• <a href="http://www.yiyongtong.com/archives/view-2000-1.html">微信官方小程序基础教程 - 发布前的准备</a></li>
+<li class="gray">• <a href="http://www.yiyongtong.com/archives/view-1998-1.html">微信官方小程序基础教程 - 小程序能力</a></li>
+<li class="gray">• <a href="http://www.yiyongtong.com/archives/view-1996-1.html">微信官方小程序基础教程 - 代码构成</a></li>
+<li class="gray">• <a href="http://www.yiyongtong.com/archives/view-1995-1.html">微信官方小程序基础教程 - 起步</a></li>
+<li class="gray">• <a href="http://www.yiyongtong.com/archives/view-1993-1.html">小程序音视频能力技术负责人解读“小程序直播</a></li>
+<li class="gray">• <a href="http://www.yiyongtong.com/archives/view-1991-1.html">微信小程序滚动穿透问题</a></li>
+<li class="gray">• <a href="http://www.yiyongtong.com/archives/view-292-1.html">官方问答--微信小程序常见FAQ (17.8.21-17.8.27)</a></li>
+<li class="gray">• <a href="http://www.yiyongtong.com/archives/view-291-1.html">开发者工具版本更新：202017.08.31 (1.01.170831)</a></li>
+<li class="gray">• <a href="http://www.yiyongtong.com/archives/view-290-1.html">微信小程序开发问答《五十二》为何不能在网页</a></li>
+<li class="gray">• <a href="http://www.yiyongtong.com/archives/view-289-1.html">微信小程序新增功能： 多列模式和省市区类型</a></li>
+
+          </ul>
+        </div><div id="con_one_1" >
+          <ul>
+            <li class="gray">• <a href="http://www.yiyongtong.com/archives/view-4601-1.html">微信小程序运维中心上线 从此bug不算是事</a></li>
+<li class="gray">• <a href="http://www.yiyongtong.com/archives/view-4203-1.html">微信小程序textarea 问题处理</a></li>
+<li class="gray">• <a href="http://www.yiyongtong.com/archives/view-4198-1.html">微信小程序bug总结, 不定期更新</a></li>
+<li class="gray">• <a href="http://www.yiyongtong.com/archives/view-3716-1.html">小程序解决浏览内容时回复微信的问题</a></li>
+<li class="gray">• <a href="http://www.yiyongtong.com/archives/view-3710-1.html">微信小程序 出现47001 data format error原因解决办法</a></li>
+<li class="gray">• <a href="http://www.yiyongtong.com/archives/view-3704-1.html">信小程序报错记录</a></li>
+<li class="gray">• <a href="http://www.yiyongtong.com/archives/view-3701-1.html">微信小程序开发错误修改方法笔录</a></li>
+<li class="gray">• <a href="http://www.yiyongtong.com/archives/view-3699-1.html">微信小程序 支付功能开发错误总结</a></li>
+<li class="gray">• <a href="http://www.yiyongtong.com/archives/view-3420-1.html">换取session_key报错40029错误</a></li>
+<li class="gray">• <a href="http://www.yiyongtong.com/archives/view-3410-1.html">微信小程序encryptedData数据解密报错误码-41003</a></li>
+<li class="gray">• <a href="http://www.yiyongtong.com/archives/view-3235-1.html">微信小程序返回码（错误码）集合说明</a></li>
+<li class="gray">• <a href="http://www.yiyongtong.com/archives/view-3213-1.html">微信小程序报错域名不在以下合法列表中</a></li>
+
+          </ul>
+        </div> </div>
+    </div>
+  </div>
+  <script type="text/javascript">
+
+jQuery("#Tab1").slide({ titCell:"ul.Right li", mainCell:".zn_cont",delayTime:0 });
+
+</script>
+  <div class="dongtai Right">
+    <h1 class="c-sectitle-2"><span>小程序常见问答</span><a href='http://www.yiyongtong.com/weixin/list-31.html'>更多</a></h1>
+    <div class="customer-panel">
+      <div class="fan-shuo">
+        <div class="t2_n">
+          <ul class="m2list">
+            <li>
+              <p>• <a href="http://www.yiyongtong.com/archives/view-7570-1.html" title="你可以零侵入式实现小程序的全局状态管理吗" target="_blank">你可以零侵入式实现小程序的全局状态管理吗</a> <span class="gray"> 2020-05-18 </span> </p>
+            </li>
+<li>
+              <p>• <a href="http://www.yiyongtong.com/archives/view-7569-1.html" title="微信小程序canvas图片融合及画布隐藏问题记录" target="_blank">微信小程序canvas图片融合及画布隐藏问题记录</a> <span class="gray"> 2020-05-18 </span> </p>
+            </li>
+<li>
+              <p>• <a href="http://www.yiyongtong.com/archives/view-7568-1.html" title="小程序webview分享" target="_blank">小程序webview分享</a> <span class="gray"> 2020-05-18 </span> </p>
+            </li>
+<li>
+              <p>• <a href="http://www.yiyongtong.com/archives/view-7567-1.html" title="van-picker 在微信小程序中的用法 - 省市区多级联动" target="_blank">van-picker 在微信小程序中的用法 - 省市区多级联动</a> <span class="gray"> 2020-05-18 </span> </p>
+            </li>
+<li>
+              <p>• <a href="http://www.yiyongtong.com/archives/view-7566-1.html" title="小程序数据埋点实践之曝光量" target="_blank">小程序数据埋点实践之曝光量</a> <span class="gray"> 2020-05-18 </span> </p>
+            </li>
+<li>
+              <p>• <a href="http://www.yiyongtong.com/archives/view-7565-1.html" title="写微信小程序这一个月" target="_blank">写微信小程序这一个月</a> <span class="gray"> 2020-05-18 </span> </p>
+            </li>
+<li>
+              <p>• <a href="http://www.yiyongtong.com/archives/view-7564-1.html" title="小程序集成eslint和prettier，代码风格统一" target="_blank">小程序集成eslint和prettier，代码风格统一</a> <span class="gray"> 2020-05-18 </span> </p>
+            </li>
+<li>
+              <p>• <a href="http://www.yiyongtong.com/archives/view-7563-1.html" title="完整微信小程序授权登录页面教程" target="_blank">完整微信小程序授权登录页面教程</a> <span class="gray"> 2020-05-18 </span> </p>
+            </li>
+<li>
+              <p>• <a href="http://www.yiyongtong.com/archives/view-7562-1.html" title="微信小程序仿Material Design风格的下拉刷新组件" target="_blank">微信小程序仿Material Design风格的下拉刷新组件</a> <span class="gray"> 2020-05-18 </span> </p>
+            </li>
+<li>
+              <p>• <a href="http://www.yiyongtong.com/archives/view-7561-1.html" title="小程序input的一些坑点" target="_blank">小程序input的一些坑点</a> <span class="gray"> 2020-05-18 </span> </p>
+            </li>
+<li>
+              <p>• <a href="http://www.yiyongtong.com/archives/view-7560-1.html" title="抽签小程序" target="_blank">抽签小程序</a> <span class="gray"> 2020-05-18 </span> </p>
+            </li>
+<li>
+              <p>• <a href="http://www.yiyongtong.com/archives/view-7559-1.html" title="人人都该具备封装思维：Taro+Es6+Promise+Ts简易构建微信" target="_blank">人人都该具备封装思维：Taro+Es6+Promise+Ts简易构建微信</a> <span class="gray"> 2020-05-18 </span> </p>
+            </li>
+<li>
+              <p>• <a href="http://www.yiyongtong.com/archives/view-7558-1.html" title="调研·微信第三方平台-代小程序开发" target="_blank">调研·微信第三方平台-代小程序开发</a> <span class="gray"> 2020-05-18 </span> </p>
+            </li>
+<li>
+              <p>• <a href="http://www.yiyongtong.com/archives/view-7557-1.html" title="微信原生小程序转其他平台的小程序实践" target="_blank">微信原生小程序转其他平台的小程序实践</a> <span class="gray"> 2020-05-18 </span> </p>
+            </li>
+<li>
+              <p>• <a href="http://www.yiyongtong.com/archives/view-7556-1.html" title="我是如何写超大型小程序代码的？" target="_blank">我是如何写超大型小程序代码的？</a> <span class="gray"> 2020-05-18 </span> </p>
+            </li>
+<li>
+              <p>• <a href="http://www.yiyongtong.com/archives/view-7483-1.html" title="微信小程序关于投诉与处罚规范" target="_blank">微信小程序关于投诉与处罚规范</a> <span class="gray"> 2020-04-22 </span> </p>
+            </li>
+<li>
+              <p>• <a href="http://www.yiyongtong.com/archives/view-7482-1.html" title="微信小程序关于小游戏主体信用分规范" target="_blank">微信小程序关于小游戏主体信用分规范</a> <span class="gray"> 2020-04-22 </span> </p>
+            </li>
+<li>
+              <p>• <a href="http://www.yiyongtong.com/archives/view-7481-1.html" title="微信小程序小游戏用户服务规范" target="_blank">微信小程序小游戏用户服务规范</a> <span class="gray"> 2020-04-22 </span> </p>
+            </li>
+<li>
+              <p>• <a href="http://www.yiyongtong.com/archives/view-7480-1.html" title="微信小程序关于小游戏虚拟道具支付规范" target="_blank">微信小程序关于小游戏虚拟道具支付规范</a> <span class="gray"> 2020-04-22 </span> </p>
+            </li>
+<li>
+              <p>• <a href="http://www.yiyongtong.com/archives/view-7479-1.html" title="微信小程序关于游戏内容规范" target="_blank">微信小程序关于游戏内容规范</a> <span class="gray"> 2020-04-22 </span> </p>
+            </li>
+<li>
+              <p>• <a href="http://www.yiyongtong.com/archives/view-7478-1.html" title="微信小程序关于游戏类目选择规范" target="_blank">微信小程序关于游戏类目选择规范</a> <span class="gray"> 2020-04-22 </span> </p>
+            </li>
+<li>
+              <p>• <a href="http://www.yiyongtong.com/archives/view-7477-1.html" title=" 微信小程序·云开发服务规范" target="_blank"> 微信小程序·云开发服务规范</a> <span class="gray"> 2020-04-21 </span> </p>
+            </li>
+<li>
+              <p>• <a href="http://www.yiyongtong.com/archives/view-7476-1.html" title=" 微信小程序插件规范" target="_blank"> 微信小程序插件规范</a> <span class="gray"> 2020-04-21 </span> </p>
+            </li>
+<li>
+              <p>• <a href="http://www.yiyongtong.com/archives/view-7475-1.html" title="微信小程序用户隐私和数据规范" target="_blank">微信小程序用户隐私和数据规范</a> <span class="gray"> 2020-04-21 </span> </p>
+            </li>
+<li>
+              <p>• <a href="http://www.yiyongtong.com/archives/view-7474-1.html" title=" 微信小程序支付规范" target="_blank"> 微信小程序支付规范</a> <span class="gray"> 2020-04-21 </span> </p>
+            </li>
+<li>
+              <p>• <a href="http://www.yiyongtong.com/archives/view-7473-1.html" title="微信小程序关于UI的规范" target="_blank">微信小程序关于UI的规范</a> <span class="gray"> 2020-04-21 </span> </p>
+            </li>
+<li>
+              <p>• <a href="http://www.yiyongtong.com/archives/view-7472-1.html" title=" 微信小程序的技术实现规范" target="_blank"> 微信小程序的技术实现规范</a> <span class="gray"> 2020-04-21 </span> </p>
+            </li>
+<li>
+              <p>• <a href="http://www.yiyongtong.com/archives/view-7471-1.html" title="微信小程序的可用性和完整性规范" target="_blank">微信小程序的可用性和完整性规范</a> <span class="gray"> 2020-04-21 </span> </p>
+            </li>
+<li>
+              <p>• <a href="http://www.yiyongtong.com/archives/view-7470-1.html" title="微信小程序用户产生内容规范" target="_blank">微信小程序用户产生内容规范</a> <span class="gray"> 2020-04-20 </span> </p>
+            </li>
+<li>
+              <p>• <a href="http://www.yiyongtong.com/archives/view-7469-1.html" title=" 微信小程序商标与商业外观" target="_blank"> 微信小程序商标与商业外观</a> <span class="gray"> 2020-04-20 </span> </p>
+            </li>
+<li>
+              <p>• <a href="http://www.yiyongtong.com/archives/view-7468-1.html" title=" 微信小程序内嵌网页规范" target="_blank"> 微信小程序内嵌网页规范</a> <span class="gray"> 2020-04-20 </span> </p>
+            </li>
+<li>
+              <p>• <a href="http://www.yiyongtong.com/archives/view-7467-1.html" title="微信小程序附近的小程序规范" target="_blank">微信小程序附近的小程序规范</a> <span class="gray"> 2020-04-20 </span> </p>
+            </li>
+<li>
+              <p>• <a href="http://www.yiyongtong.com/archives/view-7466-1.html" title="微信小程序关于其他违反平台规则的信息" target="_blank">微信小程序关于其他违反平台规则的信息</a> <span class="gray"> 2020-04-20 </span> </p>
+            </li>
+<li>
+              <p>• <a href="http://www.yiyongtong.com/archives/view-7465-1.html" title="微信小程序关于垃圾广告" target="_blank">微信小程序关于垃圾广告</a> <span class="gray"> 2020-04-20 </span> </p>
+            </li>
+<li>
+              <p>• <a href="http://www.yiyongtong.com/archives/view-7464-1.html" title="微信小程序关于发送色情低俗内容" target="_blank">微信小程序关于发送色情低俗内容</a> <span class="gray"> 2020-04-20 </span> </p>
+            </li>
+<li>
+              <p>• <a href="http://www.yiyongtong.com/archives/view-7462-1.html" title=" 微信小程序有偿投票行为" target="_blank"> 微信小程序有偿投票行为</a> <span class="gray"> 2020-04-20 </span> </p>
+            </li>
+<li>
+              <p>• <a href="http://www.yiyongtong.com/archives/view-7463-1.html" title="小程序违反国家法律法规禁止的内容" target="_blank">小程序违反国家法律法规禁止的内容</a> <span class="gray"> 2020-04-20 </span> </p>
+            </li>
+<li>
+              <p>• <a href="http://www.yiyongtong.com/archives/view-7461-1.html" title="微信小程序违反平台运营规范的其他内容" target="_blank">微信小程序违反平台运营规范的其他内容</a> <span class="gray"> 2020-04-20 </span> </p>
+            </li>
+<li>
+              <p>• <a href="http://www.yiyongtong.com/archives/view-7460-1.html" title=" 微信小程序滥用订阅消息" target="_blank"> 微信小程序滥用订阅消息</a> <span class="gray"> 2020-04-17 </span> </p>
+            </li>
+<li>
+              <p>• <a href="http://www.yiyongtong.com/archives/view-7459-1.html" title="微信小程序诱导下载行为" target="_blank">微信小程序诱导下载行为</a> <span class="gray"> 2020-04-17 </span> </p>
+            </li>
+<li>
+              <p>• <a href="http://www.yiyongtong.com/archives/view-7458-1.html" title="微信小程序绕开、规避或对抗平台审核监管的行为" target="_blank">微信小程序绕开、规避或对抗平台审核监管的行为</a> <span class="gray"> 2020-04-17 </span> </p>
+            </li>
+<li>
+              <p>• <a href="http://www.yiyongtong.com/archives/view-7457-1.html" title="微信小程序内容安全" target="_blank">微信小程序内容安全</a> <span class="gray"> 2020-04-17 </span> </p>
+            </li>
+<li>
+              <p>• <a href="http://www.yiyongtong.com/archives/view-7456-1.html" title=" 微信小程序红包类帐号" target="_blank"> 微信小程序红包类帐号</a> <span class="gray"> 2020-04-17 </span> </p>
+            </li>
+<li>
+              <p>• <a href="http://www.yiyongtong.com/archives/view-7455-1.html" title="微信小程序过度营销行为" target="_blank">微信小程序过度营销行为</a> <span class="gray"> 2020-04-17 </span> </p>
+            </li>
+<li>
+              <p>• <a href="http://www.yiyongtong.com/archives/view-7454-1.html" title="微信小程序滥用接口能力行为" target="_blank">微信小程序滥用接口能力行为</a> <span class="gray"> 2020-04-17 </span> </p>
+            </li>
+<li>
+              <p>• <a href="http://www.yiyongtong.com/archives/view-7453-1.html" title="微信小程序混淆行为" target="_blank">微信小程序混淆行为</a> <span class="gray"> 2020-04-17 </span> </p>
+            </li>
+<li>
+              <p>• <a href="http://www.yiyongtong.com/archives/view-7452-1.html" title=" 微信小程序虚拟支付行为" target="_blank"> 微信小程序虚拟支付行为</a> <span class="gray"> 2020-04-17 </span> </p>
+            </li>
+<li>
+              <p>• <a href="http://www.yiyongtong.com/archives/view-7451-1.html" title="微信小程序收集用户隐私行为" target="_blank">微信小程序收集用户隐私行为</a> <span class="gray"> 2020-04-17 </span> </p>
+            </li>
+<li>
+              <p>• <a href="http://www.yiyongtong.com/archives/view-7450-1.html" title="微信小程序互推行为" target="_blank">微信小程序互推行为</a> <span class="gray"> 2020-04-16 </span> </p>
+            </li>
+<li>
+              <p>• <a href="http://www.yiyongtong.com/archives/view-7449-1.html" title=" 微信小程序游戏测试行为" target="_blank"> 微信小程序游戏测试行为</a> <span class="gray"> 2020-04-16 </span> </p>
+            </li>
+<li>
+              <p>• <a href="http://www.yiyongtong.com/archives/view-7447-1.html" title="微信小程序类目不符行为" target="_blank">微信小程序类目不符行为</a> <span class="gray"> 2020-04-16 </span> </p>
+            </li>
+<li>
+              <p>• <a href="http://www.yiyongtong.com/archives/view-7446-1.html" title="微信小程序侵犯知识产权行为" target="_blank">微信小程序侵犯知识产权行为</a> <span class="gray"> 2020-04-16 </span> </p>
+            </li>
+<li>
+              <p>• <a href="http://www.yiyongtong.com/archives/view-7445-1.html" title="微信小程序侵犯名誉/商誉/隐私/肖像行为" target="_blank">微信小程序侵犯名誉/商誉/隐私/肖像行为</a> <span class="gray"> 2020-04-16 </span> </p>
+            </li>
+<li>
+              <p>• <a href="http://www.yiyongtong.com/archives/view-7444-1.html" title="微信小程序外挂行为" target="_blank">微信小程序外挂行为</a> <span class="gray"> 2020-04-16 </span> </p>
+            </li>
+<li>
+              <p>• <a href="http://www.yiyongtong.com/archives/view-7443-1.html" title="微信小程序网赚行为" target="_blank">微信小程序网赚行为</a> <span class="gray"> 2020-04-16 </span> </p>
+            </li>
+<li>
+              <p>• <a href="http://www.yiyongtong.com/archives/view-7442-1.html" title="微信小程序的刷量行为" target="_blank">微信小程序的刷量行为</a> <span class="gray"> 2020-04-16 </span> </p>
+            </li>
+<li>
+              <p>• <a href="http://www.yiyongtong.com/archives/view-7441-1.html" title="微信小程序滥用分享行为" target="_blank">微信小程序滥用分享行为</a> <span class="gray"> 2020-04-16 </span> </p>
+            </li>
+<li>
+              <p>• <a href="http://www.yiyongtong.com/archives/view-6911-1.html" title="从程序员的角度分析微信小程序" target="_blank">从程序员的角度分析微信小程序</a> <span class="gray"> 2018-06-14 </span> </p>
+            </li>
+<li>
+              <p>• <a href="http://www.yiyongtong.com/archives/view-6839-1.html" title="小程序风口丨微信小程序的三大引流模式和四大盈利" target="_blank">小程序风口丨微信小程序的三大引流模式和四大盈利</a> <span class="gray"> 2018-06-06 </span> </p>
+            </li>
+<li>
+              <p>• <a href="http://www.yiyongtong.com/archives/view-6838-1.html" title="抖音总裁张楠控诉腾讯：搞垄断搞小动作，有失大将" target="_blank">抖音总裁张楠控诉腾讯：搞垄断搞小动作，有失大将</a> <span class="gray"> 2018-05-29 </span> </p>
+            </li>
+<li>
+              <p>• <a href="http://www.yiyongtong.com/archives/view-6496-1.html" title="微信小游戏最新TOP10榜单，休闲益智小游戏霸占榜单" target="_blank">微信小游戏最新TOP10榜单，休闲益智小游戏霸占榜单</a> <span class="gray"> 2018-05-01 </span> </p>
+            </li>
+<li>
+              <p>• <a href="http://www.yiyongtong.com/archives/view-6495-1.html" title="朱啸虎入局小程序，流量红利就在今年" target="_blank">朱啸虎入局小程序，流量红利就在今年</a> <span class="gray"> 2018-05-01 </span> </p>
+            </li>
+<li>
+              <p>• <a href="http://www.yiyongtong.com/archives/view-6494-1.html" title="作为微信生态未来战略核心，小程序将开启社交电商" target="_blank">作为微信生态未来战略核心，小程序将开启社交电商</a> <span class="gray"> 2018-05-01 </span> </p>
+            </li>
+<li>
+              <p>• <a href="http://www.yiyongtong.com/archives/view-6492-1.html" title="小程序巨头之战，线上流量枯竭的新源泉" target="_blank">小程序巨头之战，线上流量枯竭的新源泉</a> <span class="gray"> 2018-05-01 </span> </p>
+            </li>
+<li>
+              <p>• <a href="http://www.yiyongtong.com/archives/view-6491-1.html" title="微信小游戏用户规模过亿，数款小游戏单月流水超千" target="_blank">微信小游戏用户规模过亿，数款小游戏单月流水超千</a> <span class="gray"> 2018-05-01 </span> </p>
+            </li>
+<li>
+              <p>• <a href="http://www.yiyongtong.com/archives/view-6493-1.html" title=" 微信小游戏创业风口来临，但你可能还没准备好挤进" target="_blank"> 微信小游戏创业风口来临，但你可能还没准备好挤进</a> <span class="gray"> 2018-05-01 </span> </p>
+            </li>
+<li>
+              <p>• <a href="http://www.yiyongtong.com/archives/view-4651-1.html" title="有了这项谷歌Photo的AI技术, 你能制作母亲节与父亲节" target="_blank">有了这项谷歌Photo的AI技术, 你能制作母亲节与父亲节</a> <span class="gray"> 2018-02-27 </span> </p>
+            </li>
+<li>
+              <p>• <a href="http://www.yiyongtong.com/archives/view-4650-1.html" title="大象保险杨喆：保险电商只是中间态，保险大数据服" target="_blank">大象保险杨喆：保险电商只是中间态，保险大数据服</a> <span class="gray"> 2018-02-27 </span> </p>
+            </li>
+<li>
+              <p>• <a href="http://www.yiyongtong.com/archives/view-4649-1.html" title="为企业寻找中高端国际人才，HelloCareer获英格玛人力" target="_blank">为企业寻找中高端国际人才，HelloCareer获英格玛人力</a> <span class="gray"> 2018-02-27 </span> </p>
+            </li>
+<li>
+              <p>• <a href="http://www.yiyongtong.com/archives/view-4648-1.html" title="【独家】共享单车项目再添入局者，校米出行从细分" target="_blank">【独家】共享单车项目再添入局者，校米出行从细分</a> <span class="gray"> 2018-02-27 </span> </p>
+            </li>
+<li>
+              <p>• <a href="http://www.yiyongtong.com/archives/view-4647-1.html" title="腾讯游戏营收比重连续两个季度下降，支付、云计算" target="_blank">腾讯游戏营收比重连续两个季度下降，支付、云计算</a> <span class="gray"> 2018-02-27 </span> </p>
+            </li>
+<li>
+              <p>• <a href="http://www.yiyongtong.com/archives/view-4646-1.html" title="获 3800 万元 A+ 轮投资，乐摇摇科技利用抓娃娃机做线" target="_blank">获 3800 万元 A+ 轮投资，乐摇摇科技利用抓娃娃机做线</a> <span class="gray"> 2018-02-27 </span> </p>
+            </li>
+<li>
+              <p>• <a href="http://www.yiyongtong.com/archives/view-4645-1.html" title="借网生大势赚了两年快钱后，考拉娱乐开始切入女性" target="_blank">借网生大势赚了两年快钱后，考拉娱乐开始切入女性</a> <span class="gray"> 2018-02-27 </span> </p>
+            </li>
+<li>
+              <p>• <a href="http://www.yiyongtong.com/archives/view-4644-1.html" title="独家 | 传滴滴即将接入ofo，共享单车大战格局或生变" target="_blank">独家 | 传滴滴即将接入ofo，共享单车大战格局或生变</a> <span class="gray"> 2018-02-27 </span> </p>
+            </li>
+<li>
+              <p>• <a href="http://www.yiyongtong.com/archives/view-4643-1.html" title="点击在线求助，应答的却都是机器人，这样真的好吗" target="_blank">点击在线求助，应答的却都是机器人，这样真的好吗</a> <span class="gray"> 2018-02-27 </span> </p>
+            </li>
+<li>
+              <p>• <a href="http://www.yiyongtong.com/archives/view-4642-1.html" title="如何切汽车维修中最肥的钣喷业务，“思博睿培”想" target="_blank">如何切汽车维修中最肥的钣喷业务，“思博睿培”想</a> <span class="gray"> 2018-02-27 </span> </p>
+            </li>
+<li>
+              <p>• <a href="http://www.yiyongtong.com/archives/view-4641-1.html" title="摩拜单车完成新一轮融资超6亿美元，腾讯增持，新股" target="_blank">摩拜单车完成新一轮融资超6亿美元，腾讯增持，新股</a> <span class="gray"> 2018-02-27 </span> </p>
+            </li>
+<li>
+              <p>• <a href="http://www.yiyongtong.com/archives/view-4640-1.html" title="美业信息化规模将现，门庭管店为他们提供了一套" target="_blank">美业信息化规模将现，门庭管店为他们提供了一套</a> <span class="gray"> 2018-02-27 </span> </p>
+            </li>
+<li>
+              <p>• <a href="http://www.yiyongtong.com/archives/view-4639-1.html" title="腾讯500万美元领投AI创企ObEN，进一步布局社交AI" target="_blank">腾讯500万美元领投AI创企ObEN，进一步布局社交AI</a> <span class="gray"> 2018-02-27 </span> </p>
+            </li>
+<li>
+              <p>• <a href="http://www.yiyongtong.com/archives/view-4637-1.html" title=" 无人便利店风口正当时，“便利家”获联创永宣冯涛" target="_blank"> 无人便利店风口正当时，“便利家”获联创永宣冯涛</a> <span class="gray"> 2018-02-27 </span> </p>
+            </li>
+
+          </ul>
+        </div>
+        <script type="text/javascript">
+
+	jQuery(".fan-shuo").slide({ mainCell:".m2list", effect:"topLoop", vis:5, opp:true, autoPlay:true, delayTime:800 });
+
+	</script> 
+      </div>
+    </div>
+  </div>
+</div>
+<div style="clear:both"></div>
+<div class="w mb10">
+  <div class="alist" style="width:1210px; overflow:hidden;">
+    <dl class="tag" style="width:1240px;">
+      
+      <dd><a href='/tag/shijiebei.html' target="_blank" title="微信世界杯小程序">世界小程序</a></dd>
+      
+      <dd><a href='/tag/zhengwuminsheng.html' target="_blank" title="微信政务民生小程序">政务小程序</a></dd>
+      
+      <dd><a href='/tag/xiaoyouxi.html' target="_blank" title="微信小游戏小程序">小游小程序</a></dd>
+      
+      <dd><a href='/tag/wenyu.html' target="_blank" title="微信文娱小程序">文娱小程序</a></dd>
+      
+      <dd><a href='/tag/tupianshequ.html' target="_blank" title="微信图片社区小程序">图片小程序</a></dd>
+      
+      <dd><a href='/tag/shejiao.html' target="_blank" title="微信社交小程序">社交小程序</a></dd>
+      
+      <dd><a href='/tag/yanzhi.html' target="_blank" title="微信颜值小程序">颜值小程序</a></dd>
+      
+      <dd><a href='/tag/meinv.html' target="_blank" title="微信美女小程序">美女小程序</a></dd>
+      
+      <dd><a href='/tag/zhaopian.html' target="_blank" title="微信照片小程序">照片小程序</a></dd>
+      
+      <dd><a href='/tag/sheying.html' target="_blank" title="微信摄影小程序">摄影小程序</a></dd>
+      
+      <dd><a href='/tag/gushi.html' target="_blank" title="微信故事小程序">故事小程序</a></dd>
+      
+      <dd><a href='/tag/xiangce.html' target="_blank" title="微信相册小程序">相册小程序</a></dd>
+      
+      <dd><a href='/tag/bizhi.html' target="_blank" title="微信壁纸小程序">壁纸小程序</a></dd>
+      
+      <dd><a href='/tag/tupian.html' target="_blank" title="微信图片小程序">图片小程序</a></dd>
+      
+      <dd><a href='/tag/shipin.html' target="_blank" title="微信视频小程序">视频小程序</a></dd>
+      
+      <dd><a href='/tag/paizhao.html' target="_blank" title="微信拍照小程序">拍照小程序</a></dd>
+      
+      <dd><a href='/tag/pengyouquan.html' target="_blank" title="微信朋友圈小程序">朋友小程序</a></dd>
+      
+      <dd><a href='/tag/qiche.html' target="_blank" title="微信汽车小程序">汽车小程序</a></dd>
+      
+      <dd><a href='/tag/chuangyi.html' target="_blank" title="微信创意小程序">创意小程序</a></dd>
+      
+      <dd><a href='/tag/ditu.html' target="_blank" title="微信地图小程序">地图小程序</a></dd>
+      
+      <dd><a href='/tag/jiankang.html' target="_blank" title="微信健康小程序">健康小程序</a></dd>
+      
+      <dd><a href='/tag/yiliao.html' target="_blank" title="微信医疗小程序">医疗小程序</a></dd>
+      
+      <dd><a href='/tag/zhushou.html' target="_blank" title="微信助手小程序">助手小程序</a></dd>
+      
+      <dd><a href='/tag/shouji.html' target="_blank" title="微信手机小程序">手机小程序</a></dd>
+      
+      <dd><a href='/tag/gongxiang.html' target="_blank" title="微信共享小程序">共享小程序</a></dd>
+      
+      <dd><a href='/tag/yishu.html' target="_blank" title="微信艺术小程序">艺术小程序</a></dd>
+      
+      <dd><a href='/tag/zhizuo.html' target="_blank" title="微信制作小程序">制作小程序</a></dd>
+      
+      <dd><a href='/tag/fenxiang.html' target="_blank" title="微信分享小程序">分享小程序</a></dd>
+      
+      <dd><a href='/tag/lvjing.html' target="_blank" title="微信滤镜小程序">滤镜小程序</a></dd>
+      
+      <dd><a href='/tag/xiangji.html' target="_blank" title="微信相机小程序">相机小程序</a></dd>
+      
+      <dd><a href='/tag/tengxunguanfang.html' target="_blank" title="微信腾讯官方小程序">腾讯小程序</a></dd>
+      
+      <dd><a href='/tag/huahua.html' target="_blank" title="微信画画小程序">画画小程序</a></dd>
+      
+      <dd><a href='/tag/huihua.html' target="_blank" title="微信绘画小程序">绘画小程序</a></dd>
+      
+      <dd><a href='/tag/sheji.html' target="_blank" title="微信设计小程序">设计小程序</a></dd>
+      
+      <dd><a href='/tag/yule.html' target="_blank" title="微信娱乐小程序">娱乐小程序</a></dd>
+      
+      <dd><a href='/tag/qunzu.html' target="_blank" title="微信群组小程序">群组小程序</a></dd>
+      
+      <dd><a href='/tag/dongman.html' target="_blank" title="微信动漫小程序">动漫小程序</a></dd>
+      
+      <dd><a href='/tag/jingxuan.html' target="_blank" title="微信精选小程序">精选小程序</a></dd>
+      
+      <dd><a href='/tag/Ptu.html' target="_blank" title="微信P图小程序">P图小程序</a></dd>
+      
+      <dd><a href='/tag/gongju.html' target="_blank" title="微信工具小程序">工具小程序</a></dd>
+      
+      <dd><a href='/tag/jiudian.html' target="_blank" title="微信酒店小程序">酒店小程序</a></dd>
+      
+      <dd><a href='/tag/menpiao.html' target="_blank" title="微信门票小程序">门票小程序</a></dd>
+      
+      <dd><a href='/tag/dache.html' target="_blank" title="微信打车小程序">打车小程序</a></dd>
+      
+      <dd><a href='/tag/pinche.html' target="_blank" title="微信拼车小程序">拼车小程序</a></dd>
+      
+      <dd><a href='/tag/lvyou.html' target="_blank" title="微信旅游小程序">旅游小程序</a></dd>
+      
+      <div style="clear:both"></div>
+    </dl>
+  </div>
+</div>
+<div style="clear:both"></div>
+<div class="w mb10">
+  <div class="link_box1">
+    <div class="l"> <b>友情链接：</b>  <a href=" <a href='https://mp.weixin.qq.com/' target='_blank'>微信公众平台</a>  " target=_blank> <a href='https://mp.weixin.qq.com/' target='_blank'>微信公众平台</a>  </a> <a href=" <a href='http://www.dede58.com/' target='_blank'>织梦模板</a>  " target=_blank> <a href='http://www.dede58.com/' target='_blank'>织梦模板</a>  </a> <a href=" <a href='https://mp.weixin.qq.com/debug/wxadoc/introduction/' target='_blank'>微信小程序接入指南</a>  " target=_blank> <a href='https://mp.weixin.qq.com/debug/wxadoc/introduction/' target='_blank'>微信小程序接入指南</a>  </a> <a href=" <a href='http://www.yiyongtong.com' target='_blank'>微信小程序开发</a>  " target=_blank> <a href='http://www.yiyongtong.com' target='_blank'>微信小程序开发</a>  </a> <a href=" <a href='http://www.sucai58.com/' target='_blank'>素材58</a>  " target=_blank> <a href='http://www.sucai58.com/' target='_blank'>素材58</a>  </a> <a href=" <a href='http://www.eyoucms.com/' target='_blank'>易优cms</a>  " target=_blank> <a href='http://www.eyoucms.com/' target='_blank'>易优cms</a>  </a> <a href=" <a href='http://www.ejucms.com' target='_blank'>房产cms</a>  " target=_blank> <a href='http://www.ejucms.com' target='_blank'>房产cms</a>  </a> <a href=" <a href='http://sc.dede58.com' target='_blank'>站长素材</a>  " target=_blank> <a href='http://sc.dede58.com' target='_blank'>站长素材</a>  </a> </div>
+    <div class="blank5"></div>
+  </div>
+</div>
+<script type="text/javascript">
+
+$(".goods .list").each(function(){
+
+	var self = $(this), delay;
+
+	self.mouseover(function(){
+
+		self.addClass("hover");
+
+		delay = setTimeout(function(){ delay = null; self.find(".Woqu_68").stop().animate({"bottom":0}, 300);},300);
+
+	}).mouseout(function(){
+
+		self.removeClass("hover");
+
+		if(delay){
+
+			clearTimeout(delay);
+
+		}else{
+
+			setTimeout(function(){self.find(".Woqu_68").stop().animate({"bottom":-70}, 300);},300);
+
+		}
+
+	});
+
+});
+
+</script>
+<div class="site-footer">
+  <div class="footer-related">
+    <div class="blank"></div>
+    <div class="footer-links w1210"> <span>站长常用工具：</span> 
+      
+      <!-- 友情链接循环开始 --> 
+      
+      <a href='https://mp.weixin.qq.com/debug/wxadoc/dev/' rel='nofollow' target='_blank'>微信小程序简易教程</a> <a href='https://mp.weixin.qq.com/debug/wxadoc/dev/demo.html' rel='nofollow' target='_blank'>体验小程序</a> <a href='https://mp.weixin.qq.com/debug/wxadoc/dev/devtools/uplog.html' rel='nofollow' target='_blank'>微信小程序更新日志</a> <a href='https://mp.weixin.qq.com/debug/wxadoc/dev/api/' rel='nofollow' target='_blank'>微信小程序API</a> <a href='https://mp.weixin.qq.com/debug/wxadoc/design/index.html' rel='nofollow' target='_blank'>微信小程序设计指南</a> <a href='http://jingyan.baidu.com/article/4e5b3e192a33da91911e2455.html' rel='nofollow' target='_blank'>如何注册微信小程序</a> <a href='https://mp.weixin.qq.com/debug/wxadoc/product/index.html?t=2017112' rel='nofollow' target='_blank'>微信小程序平台运营规范</a> <a href='https://mp.weixin.qq.com/debug/wxadoc/introduction/index.html?t=2017526' rel='nofollow' target='_blank'>微信小程序介绍</a> 
+      
+      <!-- 友情链接循环结束 --> 
+      
+    </div>
+    <div class="footer-info">
+			<div class="info-text">
+				<!-- 底部导航 -->
+				<p class="nav-bottom">
+					
+					
+					<a href="/" target="_blank">网站首页</a>
+					<em>|</em> <a href='http://www.yiyongtong.com/weixin/list-3.html'>微信小程序教程</a><em>|</em> <a href='http://www.yiyongtong.com/weixin/list-4.html'>微信小程序文档</a><em>|</em> <a href='http://www.yiyongtong.com/weixin/list-6.html'>微信小程序BUG</a><em>|</em> <a href='http://www.yiyongtong.com/weixin/list-28.html'>微信小程序入门</a><em>|</em> <a href='http://www.yiyongtong.com/weixin/list-30.html'>微信小程序视频</a> 
+				<em>|</em> <a href='http://www.yiyongtong.com/weixin/list-5.html'>微信小程序业界</a><em>|</em> <a href='http://www.yiyongtong.com/weixin/list-7.html'>微信小程序测评</a><em>|</em> <a href='http://www.yiyongtong.com/weixin/list-9.html'>微信小程序经验</a><em>|</em> <a href='http://www.yiyongtong.com/weixin/list-31.html'>微信小程序问答</a> 
+					
+				</p>
+				<p class="copyright">
+					Copyright &copy; 2017 http://www.yiyongtong.com 易用通 版权所有 <em></em>
+					<a href="http://www.miibeian.gov.cn/" target="_blank" >琼ICP备17003732号-2</a>
+				</p>
+				<p class="company-info">欢迎光临，做微信小程序开发，就上易用通！</p>
+				
+			</div>
+			
+		 
+			
+		</div>
+        
+        </div>
+
+
+<div class="floatBox"  style="display:none">
+  <ul>
+    <li class="li_o"><a>在线咨询</a></li>
+    <li class="li_t"><a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=516124166&site=qq&menu=yes">模板咨询</a></li>
+    <li class="li_f"><a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=516124166&site=qq&menu=yes">广告咨询</a></li>
+  </ul>
+</div>
+<script src="/skin/js/qq.js"></script>
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?0463cfa7b6be702fecf06ea60334784b";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+<div class="toolbar">
+
+   <!--<a href="###" class="toolbar-item toolbar-item-feedback"></a>-->
+   <a href="###" class="toolbar-item toolbar-item-weixin">
+    <span class="toolbar-layer"></span>
+   </a>
+   <a href="javascript:scroll(0,0)" id="top" class="toolbar-item toolbar-item-top"></a>
+</div> </div>
+</div>
+</div>
+
+<!--[if IE 6]> 
+
+<script src="/skin/js/dd_belatedpng.js"></script>
+
+<script type="text/javascript">
+
+  DD_belatedPNG.fix('*');
+
+</script>
+
+<![endif]-->
+
+</body>
+</html>
